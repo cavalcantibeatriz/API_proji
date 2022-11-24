@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/iconcenoura.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio | Bebida</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./dashboards.css">
+    <script src="../js/funcoes.js"></script>
+
+</head>
+
+<body onload="validarSessao(), listarInfosDeUm()" style="background-color: #161618;">
+
+    <!-- <body onload="validarSessao()"> -->
+
+    <div class="janela">
+
+
+        <div class="header-left">
+            <h1>Alimente</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span> !</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="sort1.html">
+                    <h3>Sugestões de pratos doces</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="sort2.html">
+                <h3>Sugestões de pratos salgados</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                
+                    <h3>Sugestões de bebidas</h3>
+               
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="tela2">
+            <div id="sorte">
+                <button class="button-64" role="button" onclick="sortear()"><span class="text">CLIQUE AQUI
+                        !</span></button>
+                <div id="men"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function sortear() {
+    var doce = (Math.random()*19).toFixed(0);
+    console.log(doce);
+    
+    if (doce == 0) {
+        men.innerHTML=`<img src="fts/receitas/y1.jpg" width="380px"><br> Yakisoba`
+    }if (doce == 1) {
+        men.innerHTML=`<img src="fts/receitas/bru3.jpg" width="380px"><br> Bruschetta`
+    }if (doce == 2) {
+        men.innerHTML=`<img src="fts/f2.jpg" width="380px"><br> Comida Japonesa`
+    }if (doce == 3) {
+        men.innerHTML=`<img src="fts/f24.jpg" width="380px"><br> Hamburguer e fritas`
+    }if (doce == 4) {
+        men.innerHTML=`<img src="fts/f20.jpg" width="380px"><br> Brocolis Refogado`
+    }if (doce == 5) {
+        men.innerHTML=`<img src="fts/f11.jpg" width="380px"><br> Lanche Natural`
+    }if (doce == 6) {
+        men.innerHTML=`<img src="fts/fotos bia/1663491527226.jpg" width="380px"><br> Massa fresca ao Molho Pesto`
+    }if (doce == 7) {
+        men.innerHTML=`<img src="fts/fotos bia/1656194849709.jpg" width="380px"><br> Arepas de Queijo`
+    }if (doce == 8) {
+        men.innerHTML=`<img src="fts/fotos bia/1663490254241.jpg" width="380px"><br> Acarajé`
+    }if (doce == 9) {
+        men.innerHTML=`<img src="fts/entreve.jpg" width="380px"><br> Entreveiro`
+    }if (doce == 10) {
+        men.innerHTML=`<img src="fts/Moqueca.jpg" width="380px"><br> Moqueca`
+    }if (doce == 11) {
+        men.innerHTML=`<img src="fts/polentaaa.jpg" width="380px"><br> Polenta`
+    }if (doce == 12) {
+        men.innerHTML=`<img src="fts/pato.jpg" width="380px"><br> Pato no Tucupi`
+    }if (doce == 13) {
+        men.innerHTML=`<img src="fts/f23.jpg" width="380px"><br> Escondidinho`
+    }if (doce == 14) {
+        men.innerHTML=`<img src="fts/costelinha.jpg" width="380px"><br> Costelinha com Barbecue`
+    }if (doce == 15) {
+        men.innerHTML=`<img src="fts/kibe.jpg" width="380px"><br> Kibe`
+    }if (doce == 16) {
+        men.innerHTML=`<img src="fts/salada.jpeg" width="380px"><br> Salada Ceaser`
+    }if (doce == 17) {
+        men.innerHTML=`<img src="fts/galinhada-com-pequi-770x418-1.png" width="380px"><br> Galinhada com Pequi`
+    }if (doce == 18) {
+        men.innerHTML=`<img src="fts/sanduiche.jpg" width="380px"><br> Sanduiche com Patê de Frango`
+    }if (doce == 19) {
+        men.innerHTML=`<img src="fts/Ceviche.jpg" width="380px"><br> Ceviche`
+    }
+        
+    }
+    </script>

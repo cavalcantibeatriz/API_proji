@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/iconcenoura.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio | Doces</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="dashboards.css">
+
+    <script src="../js/funcoes.js"></script>
+
+</head>
+
+<body  onload="validarSessao(), atualizacaoPeriodica()">
+    <div class="janela">
+        <div class="header-left">
+
+            <h1>Alimente</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span> !</h3>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Sugestões de pratos doces</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="sort2.html">
+                    <h3>Sugestões de pratos salgados</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="sort3.html">
+                    <h3>Sugestões de bebidas</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="tela2">
+            <div id="sorte">
+                <button class="button-64" role="button" onclick="sortear()"><span class="text">CLIQUE AQUI
+                        !</span></button>
+                <div id="men"></div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+
+<script>
+    function sortear() {
+        var doce = (Math.random() * 20).toFixed(0);
+
+        if (doce == 0) {
+            men.innerHTML = `<img src="fts/receitas/bri3.jpg" width="380px"><br> Brigadeiro`
+        } if (doce == 1) {
+            men.innerHTML = `<img src="fts/receitas/bolo de cenoura2.jpg" width="380px"><br> Bolo de Cenoura`
+        } if (doce == 2) {
+            men.innerHTML = `<img src="fts/receitas/cookie.jpg" width="380px"><br> Cookies`
+        } if (doce == 3) {
+            men.innerHTML = `<img src="fts/receitas/Geleia-de-Jabuticaba.jpeg" width="380px"><br> Geléia de Jabuticaba`
+        } if (doce == 4) {
+            men.innerHTML = `<img src="fts/receitas/pipoca.jpg" width="380px"><br> Pipoca Doce`
+        } if (doce == 5) {
+            men.innerHTML = `<img src="fts/receitas/petit-gateau.jpg" width="380px"><br> Petit Gateau`
+        } if (doce == 6) {
+            men.innerHTML = `<img src="fts/receitas/Strudel-.jpg" width="380px"><br> Strudel de Maçã`
+        } if (doce == 7) {
+            men.innerHTML = `<img src="fts/receitas/tiramissu.jpg " width="380px"><br> Tiramissu`
+        } if (doce == 8) {
+            men.innerHTML = `<img src="fts/receitas/cremeBrulle.jpg" width="380px"><br> Creme Brulée`
+        } if (doce == 9) {
+            men.innerHTML = `<img src="fts/receitas/pu1.jpg" width="380px"><br> Pudim`
+        } if (doce == 10) {
+            men.innerHTML = `<img src="fts/receitas/mouseL.jpg" width="380px"><br> Torta de limão`
+        } if (doce == 11) {
+            men.innerHTML = `<img src="fts/receitas/spumoni.jpg" width="380px"><br> Spumoni`
+        } if (doce == 12) {
+            men.innerHTML = `<img src="fts/f27.jpg" width="380px"><br> Macarons`
+        } if (doce == 13) {
+            men.innerHTML = `<img src="fts/f28.jpg" width="380px"><br> Pé de Moleque`
+        } if (doce == 14) {
+            men.innerHTML = `<img src="fts/f26.jpg" width="380px"><br> Casadinho`
+        } if (doce == 15) {
+            men.innerHTML = `<img src="fts/f15.jpg" width="380px"><br> Torta com Geléia de Amora`
+        } if (doce == 16) {
+            men.innerHTML = `<img src="fts/sagu.jpg" width="380px"><br> Sagu com creme`
+        } if (doce == 17) {
+            men.innerHTML = `<img src="fts/pastel de belem.jpg" width="380px"><br> Pastel de Belém`
+        } if (doce == 18) {
+            men.innerHTML = `<img src="fts/bolo.jpg" width="380px"><br> Bolo de Rolo`
+        } if (doce == 19) {
+            men.innerHTML = `<img src="fts/curau.jpg" width="380px"><br> Curau`
+        } if (doce == 20) {
+            men.innerHTML = `<img src="fts/Cannoli.jpg" width="380px"><br> Canolli`
+        }
+    }
+</script>
+
+</html>
