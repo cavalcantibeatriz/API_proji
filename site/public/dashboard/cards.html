@@ -18,32 +18,25 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizacaoPeriodica()">
-
+<body onload=" atualizacaoPeriodica()" >
+    <!-- validarSessao() -->
     <div class="janela">
-
 
         <div class="header-left dash-header">
 
-            <h1>AquaTech</h1>
+            <h1>Alimente</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Oi, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav">
-                <h3>Aquários</h3>
+                <h3>Sorteio de preparações</h3>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                <a href="./graficos.html">
+                    <h3>Veja os mais sorteados</h3>
                 </a>
             </div>
 
@@ -54,164 +47,103 @@
         </div>
 
         <div class="dash">
+
             <div class="regua">
-                <div class="item-regua perigo-frio">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua alerta-frio">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua ideal">
-                    <h4>Ideal</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua alerta-quente">
-                    <h4>Alerta</h4>
-                    <h2>0°C</h2>
-                </div>
-                <div class="item-regua perigo-quente">
-                    <h4>Perigo</h4>
-                    <h2>0°C</h2>
-                </div>
-            </div>
 
-            <div class="cards">
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_1">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_1"></div>
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_2">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_2"></div>
-
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_3">-°C</p>
-                    </div>
-                    <div class="cor-alerta ideal" id="card_3"></div>
-                </div>
-                <div class="card">
-                    <h1>Aquário 1</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_4">-°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_4"></div>
+                <div class="item-regua">
+                    <button class="button-82-pushable" role="button" onclick="sort()">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                            Sorteie uma preparação para experimentar!
+                        </span>
+                    </button>
                 </div>
 
             </div>
 
+            <div class="campo">
+                <div id="men"></div>
+            </div>
         </div>
     </div>
 
-
 </body>
-
 <script>
+            b_usuario.innerHTML = sessionStorage.NOME_USUARIO; 
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-        obterdados(2);
-        obterdados(3);
-        obterdados(4);
+    var receitas = [
+        'Bolo de cenoura',
+        'Brigadeiro',
+        'Bruschettas',
+        'Cookies',
+        'Geléia de jabuticaba',
+        'Massa Fresca',
+        'Mojito',
+        'Petit Gateau',
+        'Pipoca doce',
+        'Pudim',
+        'Studel de maçã',
+        'Yakisoba']
+    var tipo = [
+        'Doces',
+        'Salgados',
+        'Bedidas']
 
-        function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+    var imagens = [
+        '<img src="receitas/bolo de cenoura2.jpg" width="200px">',
+        '<img src="receitas/bri3.jpg" width="200px">',
+        '<img src="receitas/bruschetta.jpg" width="200px">',
+        '<img src="receitas/cookie2.jpg" width="200px">',
+        '<img src="receitas/Geleia-de-Jabuticaba.jpeg" width="200px">',
+        '<img src="receitas/massa fresca.jpg" width="200px">',
+        '<img src="receitas/MOJ1.jpg" width="200px">',
+        '<img src="receitas/petit-gateau.jpg" width="200px">',
+        '<img src="receitas/pipoca.jpg" width="200px">',
+        '<img src="receitas/pudim.jpg" width="200px">',
+        '<img src="receitas/Strudel-.jpg" width="200px">',
+        '<img src="receitas/y1.jpg" width="200px">',
+    ]
+    function sort() {
+        var nome = sessionStorage.ID_USUARIO;
+        var rere = Number(Math.random() * 12).toFixed(0)
+        var Dadosorteado = 0
 
-        setInterval(() => {
-			sendData();
-		}, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
+        for (let index = 0; index < receitas.length; index++) {
 
-    function obterdados(idAquario) {
-        fetch(`/medidas/tempo-real/${idAquario}`)
-            .then(resposta => {
+            if (rere == 0 || rere == 1 || rere == 3 || rere == 4 || rere == 7 || rere == 8 || rere == 9 || rere == 10) {
+                men.innerHTML = `${imagens[rere]}<br>${receitas[rere]} <br><br>Categoria: ${tipo[0]}<br>`
+                Dadosorteado = Number(rere) + Number(1)
+            }
+            if (rere == 2 || rere == 5 || rere == 11) {
+                men.innerHTML = `${imagens[rere]}<br>${receitas[rere]} <br><br>Categoria: ${tipo[1]}<br>`
+                Dadosorteado = Number(rere) + Number(1)
+            }
+            if (rere == 6) {
+                men.innerHTML = `${imagens[rere]}<br>${receitas[rere]} <br><br>Categoria: ${tipo[2]}<br>`
+                Dadosorteado = Number(rere) + Number(1)
+            }
+        }
 
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var dados = {
-                            temperatura: resposta[0].temperatura,
-                        }
-
-                        alertar(resposta[0].temperatura, idAquario);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
+        var sorteadoVar = Dadosorteado;
+        var nomeVar = nome;
+        // /rata nome do js e a router que ele ta fzd
+        fetch("/rata/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/rata.js
+                sorteioServer: sorteadoVar,
+                nomeServer: nomeVar
             })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-            });
+        }).then(function (resposta) {
 
-    }
+            console.log("resposta: ", resposta);
 
-    function alertar(temperatura, idAquario) {
-        var limites = {
-            muito_quente: 23,
-            quente: 22,
-            ideal: 20,
-            frio: 10,
-            muito_frio: 5
-        };
-
-        var classe_temperatura = 'cor-alerta';
-
-        if (temperatura >= limites.muito_quente) {
-            classe_temperatura = 'cor-alerta perigo-quente';
-            console.log("caiu no 1")
-        }
-        else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-            classe_temperatura = 'cor-alerta alerta-quente';
-            console.log("caiu no 2")
-        }
-        else if (temperatura < limites.quente && temperatura > limites.frio) {
-            classe_temperatura = 'cor-alerta ideal';
-            console.log("caiu no 3")
-        }
-        else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-            classe_temperatura = 'cor-alerta alerta-frio';
-            console.log("caiu no 4")
-        }
-        else if (temperatura < limites.min_temperatura) {
-            classe_temperatura = 'cor-alerta perigo-frio';
-            console.log("caiu no 5")
-        }
-
-        var card;
-
-        if (idAquario == 1) {
-            temp_aquario_1.innerHTML = temperatura + "°C";
-            card = card_1
-        } else if (idAquario == 2) {
-            temp_aquario_2.innerHTML = temperatura + "°C";
-            card = card_2
-        } else if (idAquario == 3) {
-            temp_aquario_3.innerHTML = temperatura + "°C";
-            card = card_3
-        } else if (idAquario == 4) {
-            temp_aquario_4.innerHTML = temperatura + "°C";
-            card = card_4
-        }
-
-        // alterando
-        card.className = classe_temperatura;
+        });
 
     }
 
