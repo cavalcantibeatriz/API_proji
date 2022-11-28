@@ -67,8 +67,9 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // cardErro.style.display = "block"
+            alert(`Preencha os campos corretamente`)
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
             return false;
         }
@@ -111,7 +112,7 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                // alert(`Parece que algo deu errado`)
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);

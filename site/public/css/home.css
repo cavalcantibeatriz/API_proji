@@ -235,52 +235,6 @@ li a:hover {
     border-left: #16420f 6px solid;
 }
 
-/* @keyframes cor {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-} */
-/* .cultura #bote {
-    font-size: 30px;
-    width: 25%;
-    height: 35%;
-    font-weight: bold;
-    border-radius: 50px;
-    margin-top: auto;
-    margin-left: 45px;
-    margin-right: 45px;
-    margin-bottom: auto;
-    background-color: rgb(255, 255, 255);
-    border-color: #000000;
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 40px 40px #000000c7 inset, 0 0 0 0 #00000097;
-    -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;
-} */
-/* #bote:hover {
-    box-shadow: 0 0 10px 0 #000000 inset, 0 0 10px 4px #000000;
-}
-.cultura #titulo {
-    width: auto;
-    height: auto;
-    justify-content: flex-start;
-
-    /* border: solid 3px rgb(192, 23, 23); */
-
-/* text-shadow: rgb(110, 108, 232) 1px 3px 1px;
-    font-size: 80px;
-    color: rgb(0, 0, 0);
-    text-align: center;
-
-} */
 .principal {
     width: auto;
     height: 100vh;
@@ -329,7 +283,7 @@ color: rgb(188, 184, 184);
  
 }
 .corpocal h1{
-    font-size: 50px;
+    font-size: 45px;
     text-align: center;
     margin-top: 8%;
     margin-bottom: 7%;
